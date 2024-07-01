@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Map</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Google Map</h1>
+    <div id="map"></div>
+
+    <script>
+        function initMap() {
+            // Latitude and Longitude
+            var latitude = 37.7749;
+            var longitude = -122.4194;
+
+            // Map options
+            var options = {
+                center: { lat: latitude, lng: longitude },
+                zoom: 12
+            };
+
+            // Create a map
+            var map = new google.maps.Map(document.getElementById('map'), options);
+
+            // Add a marker
+            var marker = new google.maps.Marker({
+                position: { lat: latitude, lng: longitude },
+                map: map,
+                title: 'San Francisco'
+            });
+        }
+    </script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+</body>
+</html>
